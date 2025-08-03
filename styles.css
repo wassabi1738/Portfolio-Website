@@ -1,0 +1,657 @@
+/* styles.css */
+
+/* Root Colors */
+:root {
+  --bg: #0b0f1a;
+  --hero-start: #121826;
+  --hero-end:   #1f2230;
+  --accent: #00d8ff;
+  --accent-hover: #7c4dff;
+  --text: #e0e0e0;
+  --card-bg: rgba(255,255,255,0.05);
+  --muted-bg: rgba(255,255,255,0.07);
+}
+
+/* Global Reset & Base */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  position: absolute;
+  width: 100%;
+  top: 5;
+  z-index: 10;
+}
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+.nav-menu a {
+  color: #0a0101;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color .2s;
+}
+.nav-menu a:hover {
+  color: var(--accent-hover);
+}
+.btn-cv {
+  padding: 8px 16px;
+  border: 2px solid var(--accent);
+  border-radius: 50px;
+  color: var(--accent);
+  background: transparent;
+  transition: background .2s, color .2s;
+}
+.btn-cv:hover {
+  background: var(--accent);
+  color: #fff;
+}
+:root {
+  --pill-bg: #d1e1e6;
+  --pill-hover: #cbc6f3;
+  --pill-color: #ffffff;
+}
+
+/* 1. Make the list horizontal */
+.nav-menu {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 2. Base “pill” style for all links */
+.pill {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background-color: var(--pill-bg);
+  color: var(--pill-color);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* 3. Hover & Focus Feedback */
+.pill:hover,
+.pill:focus {
+  background-color: var(--pill-hover);
+  transform: translateY(-2px);
+}
+
+/* 4. Push the CV button to the right on wide screens */
+.pill-cv {
+  margin-left: auto;
+}
+:root {
+  /* Dark theme + neon accents */
+  --bg-dark-start:  #0e0f1a;
+  --bg-dark-end:    #1a1c2b;
+  --neon-blue:      #00ffff;
+  --neon-green:     #39ff14;
+  --neon-purple:    #8a2be2;
+  --text-light:     #e0e0f0;
+}
+
+/* 1. Push the entire nav down a bit */
+nav {
+  position: relative;
+  top: 1.5rem;            /* move navigation down */
+  z-index: 10;            /* stay above background */
+  background: transparent;
+}
+
+/* 2. Center & space links */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 3. Neon-glow nav buttons */
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--neon-blue);
+  border-radius: 6px;
+  text-shadow: 0 0 4px var(--neon-blue);
+  box-shadow: 0 0 6px var(--neon-blue);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+/* 4. Hover state swaps to green/purple glow */
+nav a:hover {
+  background: var(--neon-blue);
+  color: var(--bg-dark-end);
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 10px var(--neon-green),
+    0 2px 12px rgba(138, 43, 226, 0.7);
+  text-shadow:
+    0 0 6px var(--neon-green),
+    0 0 12px var(--neon-purple);
+}
+
+
+
+
+
+/* HERO */
+.header .hero {
+  height: 100vh;
+  background: linear-gradient(135deg, var(--hero-start), var(--hero-end));
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hero-content {
+  text-align: center;
+  margin-top: 60px; /* to clear navbar */
+}
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 8px;
+}
+.hero h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.hero p {
+  font-size: 1.125rem;
+  max-width: 700px;
+  margin: 0 auto 32px;
+  color: #ddd;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+/* Ensure nav stays above hero if overlapping ever occurs */
+nav {
+  position: relative;
+  z-index: 100;
+}
+
+/* Hero wrapper spacing */
+.hero {
+  padding-top: 60px; /* adjust if your nav is taller */
+}
+
+/* Layout: image + text side by side */
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Hero image styling */
+.hero-img {
+  flex-shrink: 0;
+  width: 350px;      /* medium size, tweak as you like */
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover; /* crop center if photo is larger */
+}
+
+/* Keep your existing container widths*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img {
+    margin-bottom: 1rem;
+  }
+}
+
+
+/* BUTTONS */
+.btn {
+  padding: 12px 24px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: transform .2s, background .2s;
+}
+.btn:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* SECTION HEADINGS */
+.section {
+  padding: 80px 0;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--accent);
+  font-size: 2.5rem;
+}
+
+/* PROGRAMMING LANGUAGES */
+.language-list {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lang {
+  margin-bottom: 16px;
+}
+
+.lang span {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.progress {
+  background: var(--muted-bg);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+.progress-bar {
+  height: 100%;
+  background: #4caf50;              /* all bars go green */
+  transition: width 0.6s ease;
+}
+
+
+
+/* CARDS & GRID */
+.grid {
+  display: grid;
+  gap: 24px;
+}
+.projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.card {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  transition: transform .2s, box-shadow .2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.card h3 {
+  margin-bottom: 12px;
+  color: #c1c1ff;
+}
+.card p {
+  margin-bottom: 16px;
+}
+
+/* EXPERIENCE TIMELINE */
+.timeline {
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  max-width:800px;
+  margin:0 auto;
+}
+.timeline .card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 16px;
+  background: var(--card-bg);
+  border-radius: 8px;
+  transition: background 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(123, 66, 246, 0.2);
+  box-shadow: 0 2px 4px rgba(123, 66, 246, 0.1);
+}
+
+.timeline .card:hover {
+  background: /* if gradient, repeat the gradient here */ var(--card-bg);
+  filter: brightness(1.05);
+  box-shadow: 0 4px 8px rgba(123, 66, 246, 0.2);
+}
+
+
+.timeline .card:hover {
+  background: rgba(0,216,255,0.1);
+}
+
+/* INTERESTS LIST */
+/* Container & Grid */
+#interests {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+  padding: 4rem 1rem;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-title {
+  text-align: center;
+  color: oklab(50.535% 0.0571 -0.22795);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Styles */
+/* Container & Grid */
+#interests {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+  padding: 4rem 1rem;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-title {
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Styles */
+.interest-card {
+  background: #222;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.icon-wrapper {
+  font-size: 3rem;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.interest-card h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.interest-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.interest-card {
+  background: #61e682f6;    /* card color */
+}
+
+.interest-card h3 {
+  color: #333;            /* dark heading */
+}
+
+.interest-card p {
+  color: #555;            /* medium-dark paragraph */
+}
+
+.icon-wrapper {
+  color: #ff8b94;         /* new accent for icons */
+}
+
+
+/* Section Spacing & Background */
+/* Section wrapper with a soft gradient */
+.blog-section {
+  background: linear-gradient(135deg, #E0F7FA, #BBDEFB);
+  padding: 4rem 1rem;
+}
+
+/* Centered title */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #01579B;
+  margin-bottom: 2rem;
+}
+
+/* blog Grid layout for entries */
+.blog-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Individual entry styling */
+.blog-entry {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Entry heading */
+.blog-entry h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: #0277BD;
+}
+
+/* Entry paragraph */
+.blog-entry p {
+  margin: 0;
+  line-height: 1.6;
+  color: #424242;
+}
+:root {
+  /* Dark theme + neon accents */
+  --bg-dark-start:  #0e0f1a;
+  --bg-dark-end:    #1a1c2b;
+  --neon-blue:      #00ffff;
+  --neon-green:     #39ff14;
+  --neon-purple:    #8a2be2;
+  --card-bg:        rgba(20, 20, 30, 0.85);
+  --text-light:     #e0e0f0;
+}
+
+/* 1. Section background: deep purple→deep blue */
+.blog-section {
+  background: linear-gradient(
+    135deg,
+    var(--bg-dark-start) 0%,
+    var(--bg-dark-end)   100%
+  );
+  padding: 4rem 1rem;
+  color: var(--text-light);
+}
+
+/* 2. Title with neon glow */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--neon-green);
+  text-shadow:
+    0 0 6px var(--neon-green),
+    0 0 12px var(--neon-purple);
+}
+
+/* 3. Responsive grid */
+.blog-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 4. Cards: dark glass + neon border/glow */
+.blog-entry {
+  background: var(--card-bg);
+  border-left: 4px solid var(--neon-blue);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow:
+    0 0 8px  var(--neon-blue),
+    0 4px 16px rgba(57, 255, 20, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-entry:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 12px var(--neon-purple),
+    0 6px 24px rgba(0, 255, 255, 0.5);
+}
+
+/* 5. Headings & body text */
+.blog-entry h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 4px var(--neon-blue);
+}
+
+.blog-entry p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+
+
+/* CONTACT FORM */
+.contact-form {
+  max-width:600px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.contact-form label {
+  display:flex;
+  flex-direction:column;
+  font-weight:500;
+  color:var(--accent);
+}
+.contact-form input,
+.contact-form textarea {
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:var(--muted-bg);
+  color:#fff;
+  outline:none;
+}
+
+/* FOOTER */
+.footer {
+  background:#080b20;
+  padding:20px 0;
+  text-align:center;
+}
+.social-links {
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  margin-bottom:12px;
+}
+.social-links a {
+  color: var(--accent);
+  text-decoration:none;
+  font-weight:500;
+  transition:color .2s;
+}
+.social-links a:hover {
+  color: var(--accent-hover);
+}
+
+
+.footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;       /* space between buttons */
+  padding: 1rem 0;
+}
+
+
+.footer .social-links .social-btn,
+ 
+.footer .social-links a {
+  display: inline-block;     /* allows padding & width */
+  padding: 0.4rem 0.8rem;     /* vertical | horizontal */
+  border-radius: 999px;       /* full pill shape */
+  background-color: #222222;     /* adjust to your accent color */
+  color: #ffffff;                /* link text color */
+  text-decoration: none;
+  font-size: 0.9rem;          /* tweak as needed */
+  transition: background-color 0.2s ease;
+}
+
+.footer .social-links .social-btn:hover,
+.footer .social-links .social-btn:focus,
+.footer .social-links a:hover,
+.footer .social-links a:focus {
+  background-color: #444444;     /* hover state */
+}
+
+
+
+
